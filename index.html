@@ -3,61 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnoAir - Flight Management</title>
-    <link rel="stylesheet" href="style.css">
+    <title>OnoAir</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>OnoAir</h1>
-        <button onclick="showSection('admin-manage-flights')">Admin - Manage Flights</button>
-        <button onclick="showSection('admin-manage-destinations')">Admin - Manage Destinations</button>
-        <button onclick="showSection('user-book-flight')">User - Book a Flight</button>
-        <button onclick="showSection('user-manage-bookings')">User -  Manage Bookings</button>
-
+        <nav>
+            <a href="admin/manage-flights.html">Admin</a>
+            <a href="user/book-flight.html">User</a>
+        </nav>
     </header>
     <main>
-        <section id="welcome" class="content-section">
-            <h1>Welcome to Ono Flights</h1>
-
-        </section>
-        <!--Manage Flights Section-->
-        <section id="admin-manage-flights" class="content-section">
-            <h2>Manage Flights</h2>
-            <div id="flight-list">
-                <p>Flight No. Origin Destination...</p>
-                <p>W61283 Tel Aviv Krakow</p>
-                <p>LX8396 Larnaca Zurich</p>
-            </div>
-            <button onclick="showSection('add-flight')">Add Flight</button>
-        </section>
-        <section id="add-flight" class="content-section">
-            <h2>Add New Flight</h2>
-            <form>
-                <label>Flight No.:</label><input type="text"><br>
-                <label>Origin:</label> <input type="text"><br>
-                <label>Destination:</label> <input type="text"><br>
-                <label>Boarding date:</label> <input type="date"><br>
-                <label>Boarding time:</label> <input type="time"><br>
-                <label>Arrival date:</label> <input type="date"><br>
-                <label>Arrival time:</label> <input type="time"><br>
-                <label>No. of seats:</label> <input type="number"><br>
-                <button type="submit">Save</button>
-            </form>
-            
-        </section>      
-        <section id="admin-manage-destinations" class="content-section">
-            <h2>Manage Destinations</h2>
-        </section>
-        <section id="user-book-flight" class="content-section">
-        </section>
-        <section id="user-manage-bookings" class="content-section">
-        </section>
+        <h2>Welcome to OnoAir</h2>
+        <p>Your reliable flight management and booking system.</p>
     </main>
-
     <footer>
-        <button onclick="showSection('help')">Help</button>
+        <a href="../help.html">
+            <img src="../assets/icons/help-icon.png" alt="Help Icon" style="width: 24px; height: 24px; align-content: right;">
+        </a>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
