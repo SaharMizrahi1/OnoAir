@@ -9,15 +9,31 @@
 <body>
     <header>
         <h1>OnoAir</h1>
-        <button onclick="showSection('manage-flights')">Manage Flights</button>
+        <button onclick="showSection('admin-manage-flights')">Admin - Manage Flights</button>
+        <button onclick="showSection('admin-manage-destinations')">Admin - Manage Destinations</button>
+        <button onclick="showSection('user-book-flight')">User - Book a Flight</button>
+        <button onclick="showSection('user-manage-bookings')">User -  Manage Bookings</button>
 
     </header>
-
     <main>
-        <section id="manage-flights" class="content-section">
+        <!--Manage Flights Section-->
+        <section id="admin-manage-flights" class="content-section">
             <h2>Manage Flights</h2>
+            <div id="flight-list">
+                <p>Flight No. Origin Destination...</p>
+                <p>W61283 Tel Aviv Krakow</p>
+                <p>LX8396 Larnaca Zurich</p>
+            </div>
+            <button onclick="showSection('add-flight')">Add Flight</button>
         </section>
 
+        
+        <section id="admin-manage-destinations" class="content-section">
+        </section>
+        <section id="user-book-flight" class="content-section">
+        </section>
+        <section id="user-manage-bookings" class="content-section">
+        </section>
     </main>
 
     <footer>
