@@ -6,16 +6,41 @@
     <title>OnoAir - Flight Management System</title>
     <link rel="stylesheet" href="/shared.css">
     <script src="/shared.js" defer></script>
+    
+
 </head>
 <body>
+
     <main>
-        <h2>Welcome to OnoAir</h2>
-        <p>Select a feature to manage:</p>
-        <ul>
-            <li><a href="destinations/destinations.html">Manage Destinations</a></li>
-            <li><a href="flights/flights.html">Manage Flights</a></li>
-            <li><a href="bookings/bookings.html">Manage Bookings</a></li>
-        </ul>
+        <section class="intro">
+            <p>Welcome to OnoAir! Manage flights, destinations, and bookings with ease.</p>
+            <p>Please select your role to access the relevant features of the system:</p>
+        </section>
+
+        <!-- Role Selection Buttons -->
+        <div class="role-selection">
+            <button id="adminBtn" class="admin-btn">Admin</button>
+            <button id="userBtn" class="user-btn">User</button>
+        </div>
+
+        <!-- Admin Actions -->
+        <section id="adminActions" class="actions" style="display: none;">
+            <h2>Admin Features</h2>
+            <ul>
+                <li><a href="destinations/destinations.html">Manage Destinations</a></li>
+                <li><a href="flights/flights.html">Manage Flights</a></li>
+            </ul>
+        </section>
+
+        <!-- User Actions -->
+        <section id="userActions" class="actions" style="display: none;">
+            <h2>User Features</h2>
+            <ul>
+                <li><a href="bookings/book-flight.html">Book a Flight</a></li>
+                <li><a href="bookings/bookings.html">Manage Bookings</a></li>
+            </ul>
+        </section>
     </main>
+
 </body>
 </html>
