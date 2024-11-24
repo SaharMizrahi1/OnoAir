@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnoAir</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>OnoAir - Flight Management System</title>
+    <link rel="stylesheet" href="shared/shared.css">
+    <script src="shared/shared.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>OnoAir</h1>
-        <nav>
-            <a href="admin/manage-flights.html">Admin</a>
-            <a href="user/book-flight.html">User</a>
-        </nav>
-    </header>
     <main>
         <h2>Welcome to OnoAir</h2>
-        <p>Your reliable flight management and booking system.</p>
+        <p>Select a feature to manage:</p>
+        <ul>
+            <li><a href="destinations/destinations.html">Manage Destinations</a></li>
+            <li><a href="flights/flights.html">Manage Flights</a></li>
+            <li><a href="bookings/bookings.html">Manage Bookings</a></li>
+        </ul>
     </main>
-    <footer>
-        <a href="../help.html">
-            <img src="../assets/icons/help-icon.png" alt="Help Icon" style="width: 24px; height: 24px; align-content: right;">
-        </a>
-    </footer>
 </body>
 </html>
