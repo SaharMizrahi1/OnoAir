@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Load header
-    fetch("../shared/header.html")
+    fetch("/shared/header.html")
         .then(response => {
             if (!response.ok) throw new Error(`Failed to load header: ${response.statusText}`);
             return response.text();
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error(error));
 
     // Load footer
-    fetch("../shared/footer.html")
+    fetch("/shared/footer.html")
         .then(response => {
             if (!response.ok) throw new Error(`Failed to load footer: ${response.statusText}`);
             return response.text();

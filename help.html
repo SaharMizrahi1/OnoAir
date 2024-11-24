@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <link rel="stylesheet" href="shared/shared.css">
+    <script src="shared/shared.js" defer></script>
+
+
+    
+</head>
+<body>
+        <h1>Need Help?</h1>
+        <p>Leave your information below, and we'll get back to you as soon as possible.</p>
+        <form action="/submit-help-request" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+</body>
+</html>
