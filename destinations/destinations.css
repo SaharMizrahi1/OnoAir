@@ -1,26 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
+/* Specific to destinations page */
+h2 {
     text-align: center;
-    padding: 10px;
+    margin-bottom: 20px;
+    color: #0066cc;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
+form {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    padding: 20px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-th {
-    background-color: #f4f4f4;
+form button {
+    align-self: flex-end;
+}
+
+table th:last-child,
+table td:last-child {
+    text-align: center;
 }
