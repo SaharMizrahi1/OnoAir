@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Destination</title>
+    <link rel="stylesheet" href="/shared.css">
+    <link rel="stylesheet" href="destinations.css">
+    <script src="/shared.js" defer></script>
+</head>
+<body>
+    <main>
+        <form id="addDestinationForm">
+            <fieldset>
+                <legend>New Destination</legend>
+                <label for="destinationCode">Destination Code:</label>
+                <input type="text" id="destinationCode" name="destinationCode" required>
+
+                <label for="destinationName">Destination Name:</label>
+                <input type="text" id="destinationName" name="destinationName" required>
+
+                <label for="airportName">Airport Name:</label>
+                <input type="text" id="airportName" name="airportName" required>
+
+                <label for="airportUrl">Airport URL:</label>
+                <input type="url" id="airportUrl" name="airportUrl" required>
+
+                <label for="imageUrl">Image URL:</label>
+                <input type="url" id="imageUrl" name="imageUrl" required>
+
+                <button type="submit">Save</button>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

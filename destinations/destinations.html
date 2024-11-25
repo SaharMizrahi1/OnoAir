@@ -1,13 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Destinations</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="destinations.css">
     <script src="/shared.js" defer></script>
+    <script type="module" src="destinations.js" defer></script>
 </head>
+<body>
 
-<form id="addDestinationForm">
-    <input type="text" id="destinationCode" placeholder="Code" required>
-    <input type="text" id="destinationName" placeholder="Name" required>
-    <input type="text" id="airportName" placeholder="Airport Name" required>
-    <input type="url" id="airportUrl" placeholder="Airport URL" required>
-    <button type="submit">Add Destination</button>
-</form>
+    <main>
+        <h2>Manage Destinations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Airport Name</th>
+                    <th>Airport Website</th>
+                </tr>
+            </thead>
+            <tbody id="destinationsTable">
+               
+            </tbody>
+        </table>
+        <button type="button" onclick="location.href='new-destination.html'">Add Destination</button>
+    </main>
+
+</body>
+</html>
