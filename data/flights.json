@@ -1,0 +1,12 @@
+[
+    { "id": 1, "flightNo": "W61283", "origin": "Tel Aviv", "destination": "Krakow", "departureDate": "2024-12-25", "departureTime": "10:00", "arrivalDate": "2024-12-25", "arrivalTime": "14:00", "seats": 180 },
+    { "id": 2, "flightNo": "LX8396", "origin": "Zurich", "destination": "Larnaca", "departureDate": "2024-12-30", "departureTime": "08:00", "arrivalDate": "2024-12-30", "arrivalTime": "12:00", "seats": 150 },
+    { "id": 3, "flightNo": "DL3456", "origin": "New York", "destination": "London", "departureDate": "2024-12-15", "departureTime": "19:00", "arrivalDate": "2024-12-16", "arrivalTime": "07:00", "seats": 250 },
+    { "id": 4, "flightNo": "AF7890", "origin": "Paris", "destination": "Tokyo", "departureDate": "2024-12-20", "departureTime": "13:00", "arrivalDate": "2024-12-21", "arrivalTime": "08:00", "seats": 300 },
+    { "id": 5, "flightNo": "BA9876", "origin": "London", "destination": "Berlin", "departureDate": "2024-12-10", "departureTime": "09:00", "arrivalDate": "2024-12-10", "arrivalTime": "11:00", "seats": 120 },
+    { "id": 6, "flightNo": "IB2345", "origin": "Madrid", "destination": "Rome", "departureDate": "2024-12-18", "departureTime": "14:00", "arrivalDate": "2024-12-18", "arrivalTime": "16:00", "seats": 100 },
+    { "id": 7, "flightNo": "TG4567", "origin": "Bangkok", "destination": "Tel Aviv", "departureDate": "2024-12-22", "departureTime": "22:00", "arrivalDate": "2024-12-23", "arrivalTime": "04:00", "seats": 200 },
+    { "id": 8, "flightNo": "EK1234", "origin": "Dubai", "destination": "New York", "departureDate": "2024-12-05", "departureTime": "03:00", "arrivalDate": "2024-12-05", "arrivalTime": "12:00", "seats": 180 },
+    { "id": 9, "flightNo": "LY3456", "origin": "Tel Aviv", "destination": "Paris", "departureDate": "2024-12-12", "departureTime": "06:00", "arrivalDate": "2024-12-12", "arrivalTime": "09:30", "seats": 170 },
+    { "id": 10, "flightNo": "SQ5678", "origin": "Singapore", "destination": "Tokyo", "departureDate": "2024-12-28", "departureTime": "08:00", "arrivalDate": "2024-12-28", "arrivalTime": "14:00", "seats": 210 }
+]
