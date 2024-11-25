@@ -1,26 +1,47 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Form Styling */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header {
+form fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+form legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
     background-color: #0066cc;
     color: white;
-    text-align: center;
-    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-th {
-    background-color: #f4f4f4;
+form button:hover {
+    background-color: #004a99;
 }

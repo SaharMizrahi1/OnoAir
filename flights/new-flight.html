@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Flight</title>
+    <link rel="stylesheet" href="/shared.css">
+    <link rel="stylesheet" href="flights.css">
+    <script type="module" src="flights.js" defer></script>
+    <script src="/shared.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Add New Flight</h1>
+    </header>
+    <main>
+        <form id="newFlightForm">
+            <fieldset>
+                <legend>New Flight</legend>
+                <label for="flightNo">Flight No.:</label>
+                <input type="text" id="flightNo" name="flightNo" required>
+
+                <label for="origin">Origin:</label>
+                <select id="origin" name="origin" required>
+                    <!-- Populate dynamically with destinations -->
+                </select>
+
+                <label for="destination">Destination:</label>
+                <select id="destination" name="destination" required>
+                    <!-- Populate dynamically with destinations -->
+                </select>
+
+                <label for="boardingDate">Boarding date:</label>
+                <input type="date" id="boardingDate" name="boardingDate" required>
+
+                <label for="boardingTime">Boarding time:</label>
+                <input type="time" id="boardingTime" name="boardingTime" required>
+
+                <label for="arrivalDate">Arrival date:</label>
+                <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+                <label for="arrivalTime">Arrival time:</label>
+                <input type="time" id="arrivalTime" name="arrivalTime" required>
+
+                <label for="seats">No. of seats:</label>
+                <input type="number" id="seats" name="seats" min="1" required>
+
+                <button type="submit">Save</button>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
