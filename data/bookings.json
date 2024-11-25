@@ -1,0 +1,18 @@
+[
+    {
+        "origin": "Tel Aviv",
+        "boarding": "16/7/2025 20:00",
+        "destination": "Krakow",
+        "landing": "17/7/2025 01:00",
+        "passengers": 5,
+        "image": "https://via.placeholder.com/100"
+    },
+    {
+        "origin": "Krakow",
+        "boarding": "20/5/2024 20:00",
+        "destination": "Larnaca",
+        "landing": "21/5/2024 02:00",
+        "passengers": 6,
+        "image": "https://via.placeholder.com/100"
+    }
+]

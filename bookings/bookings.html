@@ -1,13 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="bookings.css">
     <script src="/shared.js" defer></script>
+    <script type="module" src="../data/bookings.json" defer></script>
+    <script type="module" src="bookings.js" defer></script>
 </head>
+<body>
 
+    <main>
+        <h2>My Bookings</h2>
+        <div id="bookingsList">
+            <!-- Dynamic booking cards will be added here -->
+        </div>
+    </main>
 
-
-<form id="bookFlightForm">
-    <input type="number" id="numPassengers" placeholder="Number of Passengers" required>
-    <div id="passengers"></div>
-    <button type="submit">Book Flight</button>
-</form>
+</body>
+</html>
