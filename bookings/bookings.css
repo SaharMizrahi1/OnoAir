@@ -63,3 +63,41 @@
     visibility: visible;
     opacity: 1;
 }
+
+
+/* Specific styling for buttons in the passenger form */
+#passengerForm button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid #0066cc;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ensure the button size fits the content */
+    max-width: 200px; /* Optional: Limit the maximum width of the button */
+    display: inline-block; /* Prevent the button from taking up the full width */
+}
+
+#passengerForm button:hover {
+    background-color: #004a99;
+    transform: scale(1.05);
+}
+
+#passengerForm button:active {
+    background-color: #003366;
+    transform: scale(0.98);
+}
+
+/* Ensure form inputs maintain proportion */
+#passengerForm input {
+    padding: 8px;
+    width: 100%; /* Optional: Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    max-width: 200px; /* Limit input field width */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
