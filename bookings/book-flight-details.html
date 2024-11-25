@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bookings.css">
     <script src="/shared.js" defer></script>
     <script type="module" src="book-flight-details.js" defer></script>
+    <title>Hover Tooltip</title>
 </head>
 <body>
     <main>
@@ -16,7 +17,9 @@
             <!-- Dynamic flight details will be inserted here -->
         </div>
         <form id="passengerForm">
-            <label for="numPassengers">No of passengers:</label>
+            <label for="numPassengers" class="tooltip">No of passengers:
+                <span class="tooltip-text">Please enter the number of passengers</span>
+            </label>
             <input type="number" id="numPassengers" name="numPassengers" min="1" max="10" required>
 
             <div id="passengerDetails">
