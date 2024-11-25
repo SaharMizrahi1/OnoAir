@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight</title>
+    <link rel="stylesheet" href="/shared.css">
+    <link rel="stylesheet" href="bookings.css">
+    <script src="/shared.js" defer></script>
+    <script type="module" src="book-flight.js" defer></script>
+</head>
+<body>
+    <main>
+        <h2>Book a Flight</h2>
+        <form id="filterFlightsForm">
+            <label for="origin">Filter by:</label>
+            <label for="origin">Origin:</label>
+            <select id="origin" name="origin">
+                <option value="">All</option>
+                <!-- Options dynamically populated -->
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination">
+                <option value="">All</option>
+                <!-- Options dynamically populated -->
+            </select>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight No.</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="flightsTable">
+                <!-- Dynamic rows -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

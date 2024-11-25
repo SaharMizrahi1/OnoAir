@@ -6,7 +6,7 @@ h2 {
 }
 
 form {
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -21,4 +21,49 @@ form {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f8f9fa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+table th {
+    background-color:  #0066cc;
+}
+
+table button {
+    padding: 5px 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+table button:hover {
+    background-color: #004a99;
+}
+
+
+form label {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+form select {
+    padding: 5px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    min-width: 150px; /* Ensure consistent dropdown size */
 }
