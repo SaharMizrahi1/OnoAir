@@ -25,6 +25,22 @@ header {
 
 header h1 {
     font-size: 2rem;
+    
+}
+
+header h1 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+    transition: color 0.3s ease;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+
+}
+
+header h1 a:hover {
+    background-color: #004a99;
+
 }
 
 nav ul {
