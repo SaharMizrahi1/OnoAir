@@ -43,7 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${flight.flightNo}</td>
                     <td>${flight.origin}</td>
                     <td>${flight.destination}</td>
-                    <td><button class="book-btn">Book</button></td>
+                    <td>
+                        <button 
+                            class="book-btn" 
+                            onclick="window.location.href='book-flight-details.html?flightNo=${encodeURIComponent(flight.flightNo)}&origin=${encodeURIComponent(flight.origin)}&destination=${encodeURIComponent(flight.destination)}'"
+                        >
+                            Book
+                        </button>
+                    </td>
                 `;
                 flightsTable.appendChild(row);
             });
