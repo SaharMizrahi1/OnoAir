@@ -84,3 +84,34 @@ main.book-flight {
     width: 90%; /* Allow it to adjust for smaller screens */
     box-sizing: border-box;
 }
+
+#passengerDetails {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Add spacing between elements */
+}
+
+#passengerDetails input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#passengerDetails legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#passengerDetails fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px; /* Space between fieldsets */
+}
+
