@@ -1,12 +1,8 @@
-import Flight from "../classes/flight.js";
-
-const flights = [
-    new Flight("W61283", "Tel Aviv", "Krakow", "2024-12-25", "10:00", "2024-12-25", "14:00", 180),
-    new Flight("LX8396", "Zurich", "Larnaca", "2024-12-30", "08:00", "2024-12-30", "12:00", 150)
-];
+import { flights } from "../data/flights.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const table = document.getElementById("flightsTable");
+
     flights.forEach(flight => {
         const row = document.createElement("tr");
         row.innerHTML = `

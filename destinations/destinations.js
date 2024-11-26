@@ -1,21 +1,9 @@
+import { destinations } from "../data/destinations.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.getElementById("destinationsTable");
 
-    // Fetch destinations data from JSON file
-    fetch("../data/destinations.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch destinations data");
-            }
-            return response.json();
-        })
-        .then(destinations => {
-            renderTable(destinations);
-        })
-        .catch(error => console.error("Error loading destinations:", error));
-
-    // Function to render the destinations table
-    function renderTable(destinations) {
+    function renderTable() {
         tableBody.innerHTML = ""; // Clear existing rows
         destinations.forEach(destination => {
             const row = document.createElement("tr");
@@ -27,4 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
             tableBody.appendChild(row);
         });
     }
+
+    renderTable();
 });
