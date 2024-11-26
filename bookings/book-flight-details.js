@@ -1,3 +1,5 @@
+import { flights } from "../data/flights.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const flightDetailsDiv = document.getElementById("flightDetails");
     const passengerDetailsDiv = document.getElementById("passengerDetails");
@@ -6,15 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Retrieve flight details from query parameters
     const params = new URLSearchParams(window.location.search);
     const flightNo = params.get("flightNo");
-    const origin = params.get("origin");
-    const destination = params.get("destination");
-    const boarding = params.get("boarding");
-    const landing = params.get("landing");
+
+    // Find the flight details from the imported data
+    const selectedFlight = flights.find(flight => flight.flightNo === flightNo);
+
+    if (!selectedFlight) {
+        alert("Flight not found. Please go back and select a valid flight.");
+        return;
+    }
+
+    // Destructure flight properties
+    const { origin, destination, departureDate, departureTime, arrivalDate, arrivalTime } = selectedFlight;
 
     // Display flight details
     flightDetailsDiv.innerHTML = `
-        <p><strong>Origin:</strong> ${origin} <strong>Boarding:</strong> ${boarding}</p>
-        <p><strong>Destination:</strong> ${destination} <strong>Landing:</strong> ${landing}</p>
+        <p><strong>Flight No:</strong> ${flightNo}</p>
+        <p><strong>Origin:</strong> ${origin}</p>
+        <p><strong>Destination:</strong> ${destination}</p>
+        <p><strong>Departure:</strong> ${departureDate} ${departureTime}</p>
+        <p><strong>Arrival:</strong> ${arrivalDate} ${arrivalTime}</p>
     `;
 
     // Generate dynamic passenger fields
@@ -66,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
             flightNo,
             origin,
             destination,
-            boarding,
-            landing,
+            departure: `${departureDate} ${departureTime}`,
+            arrival: `${arrivalDate} ${arrivalTime}`,
             passengers
         };
 

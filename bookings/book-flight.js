@@ -1,9 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const flights = [
-        { flightNo: "W61283", origin: "Tel Aviv", destination: "Krakow" },
-        { flightNo: "LX8396", origin: "Larnaca", destination: "Zurich" }
-    ];
+import { flights } from "../data/flights.js";
 
+document.addEventListener("DOMContentLoaded", () => {
     const originSelect = document.getElementById("origin");
     const destinationSelect = document.getElementById("destination");
     const flightsTable = document.getElementById("flightsTable");
@@ -46,8 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>
                         <button 
                             class="book-btn" 
-                            onclick="window.location.href='book-flight-details.html?flightNo=${encodeURIComponent(flight.flightNo)}&origin=${encodeURIComponent(flight.origin)}&destination=${encodeURIComponent(flight.destination)}'"
-                        >
+                            onclick="window.location.href='book-flight-details.html?flightNo=${encodeURIComponent(flight.flightNo)}&origin=${encodeURIComponent(flight.origin)}&destination=${encodeURIComponent(flight.destination)}'">
                             Book
                         </button>
                     </td>
