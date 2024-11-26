@@ -3,6 +3,7 @@ import { flights } from "../data/flights.js";
 document.addEventListener("DOMContentLoaded", () => {
     const table = document.getElementById("flightsTable");
 
+    // Render the flights table dynamically
     flights.forEach(flight => {
         const row = document.createElement("tr");
         row.innerHTML = `
