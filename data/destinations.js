@@ -76,5 +76,3 @@ export const destinations = [
 
 ];
 
-
-window.destinations = destinations;
