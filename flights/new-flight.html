@@ -6,8 +6,85 @@
     <title>Add New Flight</title>
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="flights.css">
-    <script type="module" src="flights.js" defer></script>
-    <script src="/shared.js" defer></script>
+    <script type="module">
+        import { destinations } from "../data/destinations.js";
+        import Flight from "../classes/flight.js";
+        import { flights } from "../data/flights.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("newFlightForm");
+            const originSelect = document.getElementById("origin");
+            const destinationSelect = document.getElementById("destination");
+            const validationErrors = document.getElementById("validationErrors");
+
+            // Populate origin and destination dropdowns from destinations.js
+            destinations.forEach(destination => {
+                const originOption = document.createElement("option");
+                originOption.value = destination.name;
+                originOption.textContent = destination.name;
+                originSelect.appendChild(originOption);
+
+                const destinationOption = document.createElement("option");
+                destinationOption.value = destination.name;
+                destinationOption.textContent = destination.name;
+                destinationSelect.appendChild(destinationOption);
+            });
+
+            // Form submission logic
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                validationErrors.innerHTML = ""; // Clear any previous errors
+
+                const flightNo = document.getElementById("flightNo").value.trim();
+                const origin = originSelect.value;
+                const destination = destinationSelect.value;
+                const departureDate = document.getElementById("boardingDate").value;
+                const departureTime = document.getElementById("boardingTime").value;
+                const arrivalDate = document.getElementById("arrivalDate").value;
+                const arrivalTime = document.getElementById("arrivalTime").value;
+                const seats = parseInt(document.getElementById("seats").value);
+
+                const errors = [];
+
+                // Validate unique flight number
+                if (flights.some(f => f.flightNo === flightNo)) {
+                    errors.push("Flight number already exists!");
+                }
+
+                // Validate dates
+                const now = new Date();
+                const departure = new Date(`${departureDate}T${departureTime}`);
+                const arrival = new Date(`${arrivalDate}T${arrivalTime}`);
+
+                if (departure < now) {
+                    errors.push("Departure date and time must be in the future.");
+                }
+
+                if (arrival <= departure) {
+                    errors.push("Arrival must be after departure.");
+                }
+
+                // Validate seats
+                if (isNaN(seats) || seats <= 0) {
+                    errors.push("Seats must be a positive number.");
+                }
+
+                // Validate origin and destination
+                if (origin === destination) {
+                    errors.push("Origin and destination must be different.");
+                }
+
+                // Display errors or save flight
+                if (errors.length > 0) {
+                    validationErrors.innerHTML = errors.map(err => `<p>${err}</p>`).join("");
+                } else {
+                    flights.push(new Flight(flightNo, origin, destination, departureDate, departureTime, arrivalDate, arrivalTime, seats));
+                    alert("Flight added successfully!");
+                    window.location.href = "flights.html"; // Redirect to flights list
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -22,12 +99,12 @@
 
                 <label for="origin">Origin:</label>
                 <select id="origin" name="origin" required>
-                    <!-- Populate dynamically with destinations -->
+                    <!-- Populated dynamically -->
                 </select>
 
                 <label for="destination">Destination:</label>
                 <select id="destination" name="destination" required>
-                    <!-- Populate dynamically with destinations -->
+                    <!-- Populated dynamically -->
                 </select>
 
                 <label for="boardingDate">Boarding date:</label>
@@ -47,6 +124,7 @@
 
                 <button type="submit">Save</button>
             </fieldset>
+            <div id="validationErrors" class="validation-errors"></div>
         </form>
     </main>
 </body>
