@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Destructure flight properties
-    const { origin, destination, departureDate, departureTime, arrivalDate, arrivalTime } = selectedFlight;
+    const { origin, destination, departureDate, departureTime, arrivalDate, arrivalTime, seats } = selectedFlight;
 
     // Display flight details
     flightDetailsDiv.innerHTML = `
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
             fieldset.innerHTML = `
                 <legend>Passenger ${i}</legend>
                 <label for="passengerName${i}">Name:</label>
-                <input type="text" id="passengerName${i}" name="passengerName${i}" required>
+                <input type="text" id="passengerName${i}" name="passengerName${i}" required pattern="^[A-Za-z ]+$" title="Name should only contain letters and spaces.">
                 <label for="passportId${i}">Passport ID:</label>
-                <input type="text" id="passportId${i}" name="passportId${i}" required>
+                <input type="text" id="passportId${i}" name="passportId${i}" required pattern="^[A-Za-z0-9]+$" title="Passport ID should only contain letters and numbers.">
             `;
             passengerDetailsDiv.appendChild(fieldset);
         }
@@ -48,7 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Listen for passenger number input
     numPassengersInput.addEventListener("change", () => {
         const numPassengers = parseInt(numPassengersInput.value, 10);
-        createPassengerFields(numPassengers);
+        if (numPassengers > seats) {
+            alert(`The number of passengers exceeds the available seats (${seats}).`);
+            numPassengersInput.value = seats;
+            createPassengerFields(seats);
+        } else {
+            createPassengerFields(numPassengers);
+        }
     });
 
     // Save booking on form submission
@@ -63,13 +69,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Collect passenger data
         const passengers = [];
+        const passportIds = new Set(); // For duplicate passport check
         for (let i = 1; i <= numPassengers; i++) {
-            const name = document.getElementById(`passengerName${i}`).value;
-            const passportId = document.getElementById(`passportId${i}`).value;
+            const name = document.getElementById(`passengerName${i}`).value.trim();
+            const passportId = document.getElementById(`passportId${i}`).value.trim();
+
             if (!name || !passportId) {
                 alert(`Please fill out all details for Passenger ${i}.`);
                 return;
             }
+
+            if (!/^[A-Za-z ]+$/.test(name)) {
+                alert(`Passenger ${i}'s name should only contain letters and spaces.`);
+                return;
+            }
+
+            if (!/^[A-Za-z0-9]+$/.test(passportId)) {
+                alert(`Passenger ${i}'s passport ID should only contain letters and numbers.`);
+                return;
+            }
+
+            if (passportIds.has(passportId)) {
+                alert(`Duplicate passport ID found: ${passportId} for Passenger ${i}.`);
+                return;
+            }
+
+            passportIds.add(passportId);
             passengers.push({ name, passportId });
         }
 
@@ -84,7 +109,17 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         console.log("Booking saved:", booking);
-        alert("Booking saved successfully!");
+        alert(`Booking saved successfully!\n\nBooking Details:\n${JSON.stringify(booking, null, 2)}`);
         window.location.href = "bookings.html";
+/*
+        console.log("Booking saved:", booking);
+        alert("Booking saved successfully!");
+        window.location.href = "bookings.html";*/
     });
+
+    // Preload fields for the first flight in the list if none is selected
+    if (!flightNo && flights.length > 0) {
+        const firstFlight = flights[0];
+        window.location.href = `book-flight-details.html?flightNo=${encodeURIComponent(firstFlight.flightNo)}`;
+    }
 });

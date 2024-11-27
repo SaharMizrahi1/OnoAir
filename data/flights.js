@@ -1,7 +1,7 @@
 import Flight from "../classes/flight.js";
 
 export const flights = [
-    new Flight("W61283", "Tel Aviv", "Krakow", "2024-12-25", "10:00", "2024-12-25", "14:00", 180),
+    new Flight("W61283", "Tel Aviv", "Krakow", "2024-12-25", "10:00", "2024-12-25", "14:00", 2),
     new Flight("LX8396", "Zurich", "Larnaca", "2024-12-30", "08:00", "2024-12-30", "12:00", 150),
     new Flight("BA456", "London", "New York", "2024-11-20", "09:30", "2024-11-20", "14:30", 300),
     new Flight("AF789", "Paris", "Tokyo", "2025-01-15", "13:00", "2025-01-16", "07:30", 220),
