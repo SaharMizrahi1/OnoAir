@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Destination:</strong> ${destination}</p>
         <p><strong>Departure:</strong> ${departureDate} ${departureTime}</p>
         <p><strong>Arrival:</strong> ${arrivalDate} ${arrivalTime}</p>
+        <p><strong>Number Of Seats:</strong> ${seats}</p>
     `;
 
     // Generate dynamic passenger fields

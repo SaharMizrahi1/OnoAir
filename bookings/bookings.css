@@ -115,3 +115,9 @@ main.book-flight {
     margin-bottom: 20px; /* Space between fieldsets */
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5b9ddf;
+}
+

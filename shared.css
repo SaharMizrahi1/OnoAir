@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family:Parkinsans, sans-serif;
 
 }
 
@@ -16,7 +16,7 @@ body {
 
 /* Header */
 header {
-    background-color: #0066cc;
+    background-color: #7ab9f8;
     color: #fff;
     padding: 15px 0;
     text-align: center;
@@ -39,7 +39,7 @@ header h1 a {
 }
 
 header h1 a:hover {
-    background-color: #004a99;
+    background-color:#004a99;
 
 }
 
@@ -66,7 +66,7 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #7ab9f8;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -81,11 +81,12 @@ footer {
     right: 10px;
     bottom: 10px;
     cursor: pointer;
+    
 }
 
 /* Buttons */
 button {
-    background-color: #0066cc;
+    background-color: #7ab9f8;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -115,7 +116,7 @@ table td {
 }
 
 table th {
-    background-color: #0066cc;
+    background-color:#7ab9f8;
     color: white;
 }
 
