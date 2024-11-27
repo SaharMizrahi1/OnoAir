@@ -59,7 +59,7 @@
                 console.log("Updated Destinations:", destinations);
 
                 // Success message
-                alert(`Destination added successfully!`);
+                alert(`Destination added successfully!\n\nDestination Details:\n${JSON.stringify(newDestination, null, 2)}`);
 
                 // Redirect to the destinations list page
                 window.location.href = "destinations.html";
