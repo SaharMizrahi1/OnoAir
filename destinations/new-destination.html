@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/shared.css">
     <link rel="stylesheet" href="destinations.css">
     <script src="/shared.js" defer></script>
+    <script src="./data/destinations.js" defer></script> <!-- Ensure this loads before using destinations -->
 </head>
 <body>
     <main>
@@ -32,5 +33,62 @@
             </fieldset>
         </form>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const destinations = window.destinations || [];
+        
+            // Debug: Check the contents of the destinations array
+            console.log("Loaded destinations:", destinations);
+        
+            document.getElementById("addDestinationForm").addEventListener("submit", (e) => {
+                e.preventDefault();
+        
+                // Get form field values
+                const destinationCode = document.getElementById("destinationCode").value.trim().toUpperCase();
+                const destinationName = document.getElementById("destinationName").value.trim();
+                const airportName = document.getElementById("airportName").value.trim();
+                const airportUrl = document.getElementById("airportUrl").value.trim();
+                const imageUrl = document.getElementById("imageUrl").value.trim();
+        
+                // Validation: Check if all fields are filled
+                if (!destinationCode || !destinationName || !airportName || !airportUrl || !imageUrl) {
+                    alert("All fields must be filled!");
+                    return;
+                }
+        
+                // Debug: Check the first destination object to verify structure
+                console.log("First destination object:", destinations[0]);
+        
+                // Validation: Check for unique destination code
+                const isDuplicate = destinations.some(dest => {
+                    console.log("Checking destination code:", dest.code, "against input:", destinationCode); // Debug
+                    return dest.code && dest.code.toUpperCase() === destinationCode;
+                });
+
+                if (isDuplicate) {
+                    alert(`Destination code "${destinationCode}" already exists!`);
+                    return;
+                }
+        
+                // Create the new destination object
+                const newDestination = {
+                    code: destinationCode,
+                    name: destinationName,
+                    airportName,
+                    airportUrl,
+                    imageUrl,
+                };
+        
+                // Add the new destination to the array (optional)
+                destinations.push(newDestination);
+        
+                // Success message
+                alert(`Destination added successfully:\n${JSON.stringify(newDestination, null, 2)}`);
+        
+                // Redirect back to destinations.html
+                window.location.href = "destinations.html";
+            });
+        });
+    </script>
 </body>
 </html>

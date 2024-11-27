@@ -6,6 +6,8 @@ class Destination {
         this.airportUrl = airportUrl;
         this.imageUrl = imageUrl;
     }
+
+
 }
 
 export default Destination;

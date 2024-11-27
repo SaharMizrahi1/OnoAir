@@ -71,4 +71,10 @@ export const destinations = [
         "https://www.changiairport.com/",
         "https://upload.wikimedia.org/wikipedia/commons/9/97/Colosseo_2020.jpg"
     )
+
+    
+
 ];
+
+
+window.destinations = destinations;
