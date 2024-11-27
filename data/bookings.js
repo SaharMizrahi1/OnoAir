@@ -7,7 +7,7 @@ export const bookings = [
         "Krakow",
         "17/7/2025 01:00",
         5,
-        "https://upload.wikimedia.org/wikipedia/commons/a/aa/Wawel_Castle_in_Krak%C3%B3w.jpg"
+        "../assets/icons/Krakow.jpg"
     ),
     new Booking(
         "New York",
@@ -15,7 +15,7 @@ export const bookings = [
         "Tokyo",
         "26/12/2023 15:00",
         4,
-        "https://upload.wikimedia.org/wikipedia/commons/0/02/Tokyo_Montage_2022.jpg"
+        "../assets/icons/Tokyo.jpg"
     ),
     new Booking(
         "London",
@@ -23,7 +23,7 @@ export const bookings = [
         "Paris",
         "10/8/2023 16:30",
         2,
-        "https://upload.wikimedia.org/wikipedia/commons/9/97/Colosseo_2020.jpg"
+        "../assets/icons/Paris.jpg"
     ),
     new Booking(
         "Dubai",
@@ -31,7 +31,7 @@ export const bookings = [
         "Sydney",
         "1/12/2023 07:00",
         6,
-        "https://upload.wikimedia.org/wikipedia/commons/0/02/Melbourne_Collage_2019.png"
+        "../assets/icons/Sydney.jpg"
     ),
     new Booking(
         "Berlin",
@@ -39,7 +39,7 @@ export const bookings = [
         "Rome",
         "5/6/2023 09:30",
         3,
-        "https://upload.wikimedia.org/wikipedia/commons/9/97/Colosseo_2020.jpg"
+        "../assets/icons/Rome.jpg"
     ),
     new Booking(
         "Los Angeles",
@@ -47,7 +47,7 @@ export const bookings = [
         "San Francisco",
         "13/9/2023 01:15",
         2,
-        "https://upload.wikimedia.org/wikipedia/commons/a/a6/Golden_Gate_Bridge_Sept_2020.jpg"
+        "../assets/icons/San Francisco.jpg"
     ),
     new Booking(
         "Toronto",
@@ -55,7 +55,7 @@ export const bookings = [
         "Montreal",
         "15/11/2023 09:30",
         1,
-        "https://upload.wikimedia.org/wikipedia/commons/3/39/Larnaca_Marina_and_Promenade.jpg"
+        "../assets/icons/Montreal.jpg"
     ),
     new Booking(
         "Mumbai",
@@ -63,7 +63,7 @@ export const bookings = [
         "Delhi",
         "20/10/2023 20:30",
         3,
-        "https://upload.wikimedia.org/wikipedia/commons/8/88/Sultan_Ahmed_Mosque_Dome.jpg"
+        "../assets/icons/Delhi.jpg"
     ),
     new Booking(
         "Singapore",
@@ -71,7 +71,7 @@ export const bookings = [
         "Bangkok",
         "5/3/2024 14:30",
         4,
-        "https://upload.wikimedia.org/wikipedia/commons/0/02/Melbourne_Collage_2019.png"
+        "../assets/icons/Bangkok.jpg"
     ),
     new Booking(
         "Sydney",
@@ -79,6 +79,6 @@ export const bookings = [
         "Auckland",
         "10/2/2024 11:00",
         7,
-        "https://upload.wikimedia.org/wikipedia/commons/0/02/Tokyo_Montage_2022.jpg"
+        "../assets/icons/Auckland.jpg"
     )
 ];
