@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const destinationSelect = document.getElementById("destination");
     const flightsTable = document.getElementById("flightsTable");
 
-    // Populate dropdowns
+
     function populateDropdowns() {
         const origins = [...new Set(flights.map(flight => flight.origin))];
         const destinations = [...new Set(flights.map(flight => flight.destination))];
@@ -25,9 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Render flights table
     function renderTable(filter = {}) {
-        flightsTable.innerHTML = ""; // Clear table
+        flightsTable.innerHTML = ""; 
 
         // Filter flights
         const filteredFlights = flights.filter(flight => {
@@ -36,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return matchesOrigin && matchesDestination;
         });
 
-        // If no flights match the filters, show a message
         if (filteredFlights.length === 0) {
             const noFlightsRow = document.createElement("tr");
             noFlightsRow.innerHTML = `
@@ -46,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Otherwise, render matching flights
         filteredFlights.forEach(flight => {
             const row = document.createElement("tr");
             row.innerHTML = `
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Filter flights
     originSelect.addEventListener("change", () => {
         renderTable({ origin: originSelect.value, destination: destinationSelect.value });
     });
@@ -74,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderTable({ origin: originSelect.value, destination: destinationSelect.value });
     });
 
-    // Initialize page
     populateDropdowns();
     renderTable();
 });

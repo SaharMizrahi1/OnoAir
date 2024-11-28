@@ -19,7 +19,6 @@
             const destinationSelect = document.getElementById("destination");
             const validationErrors = document.getElementById("validationErrors");
 
-            // Populate origin and destination dropdowns from destinations.js
             destinations.forEach(destination => {
                 const originOption = document.createElement("option");
                 originOption.value = destination.name;
@@ -32,10 +31,9 @@
                 destinationSelect.appendChild(destinationOption);
             });
 
-            // Form submission logic
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
-                validationErrors.innerHTML = ""; // Clear any previous errors
+                validationErrors.innerHTML = ""; 
 
                 const flightNo = document.getElementById("flightNo").value.trim();
                 const origin = originSelect.value;
@@ -48,12 +46,10 @@
 
                 const errors = [];
 
-                // Validate unique flight number
                 if (flights.some(f => f.flightNo === flightNo)) {
                     errors.push("Flight number already exists!");
                 }
 
-                // Validate dates
                 const now = new Date();
                 const departure = new Date(`${departureDate}T${departureTime}`);
                 const arrival = new Date(`${arrivalDate}T${arrivalTime}`);
@@ -66,23 +62,20 @@
                     errors.push("Arrival must be after departure.");
                 }
 
-                // Validate seats
                 if (isNaN(seats) || seats <= 0) {
                     errors.push("Seats must be a positive number.");
                 }
 
-                // Validate origin and destination
                 if (origin === destination) {
                     errors.push("Origin and destination must be different.");
                 }
 
-                // Display errors or save flight
                 if (errors.length > 0) {
                     validationErrors.innerHTML = errors.map(err => `<p>${err}</p>`).join("");
                 } else {
                     flights.push(new Flight(flightNo, origin, destination, departureDate, departureTime, arrivalDate, arrivalTime, seats));
                     alert("Flight added successfully!");
-                    window.location.href = "flights.html"; // Redirect to flights list
+                    window.location.href = "flights.html";
                 }
             });
         });
@@ -101,12 +94,10 @@
 
                 <label for="origin">Origin:</label>
                 <select id="origin" name="origin" required>
-                    <!-- Populated dynamically -->
                 </select>
 
                 <label for="destination">Destination:</label>
                 <select id="destination" name="destination" required>
-                    <!-- Populated dynamically -->
                 </select>
 
                 <label for="boardingDate">Boarding date:</label>

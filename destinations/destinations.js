@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.getElementById("destinationsTable");
 
     function renderTable() {
-        tableBody.innerHTML = ""; // Clear existing rows
+        tableBody.innerHTML = "";
         destinations.forEach(destination => {
             const row = document.createElement("tr");
             row.innerHTML = `

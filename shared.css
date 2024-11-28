@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
-
-/* General Reset */
 * {
-/*    margin: 0;
-    padding: 0;*/
     box-sizing: border-box;
     font-family: Parkinsans, sans-serif;
 }
@@ -32,7 +28,7 @@ body {
    
     
 }
-/* Header */
+
 header {
     background-color: #7ab9f8;
     color: #fff;
@@ -47,8 +43,8 @@ header h1 {
 }
 
 header h1 a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit text color from parent */
+    text-decoration: none;
+    color: inherit;
     transition: color 0.3s ease;
     border-radius: 5px;
     padding: 5px 10px;
@@ -102,7 +98,6 @@ footer {
     
 }
 
-/* Buttons */
 button {
     background-color: #7ab9f8;
     color: white;
@@ -119,7 +114,7 @@ button:hover {
     background-color: #004a99;
 }
 
-/* Tables */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -138,7 +133,6 @@ table th {
     color: white;
 }
 
-/* Forms */
 form {
     margin: 20px 0;
     display: flex;

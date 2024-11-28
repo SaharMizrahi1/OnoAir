@@ -5,11 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const passengerDetailsDiv = document.getElementById("passengerDetails");
     const numPassengersInput = document.getElementById("numPassengers");
 
-    // Retrieve flight details from query parameters
     const params = new URLSearchParams(window.location.search);
     const flightNo = params.get("flightNo");
 
-    // Find the flight details from the imported data
     const selectedFlight = flights.find(flight => flight.flightNo === flightNo);
 
     if (!selectedFlight) {
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Destructure flight properties
     const { origin, destination, departureDate, departureTime, arrivalDate, arrivalTime, seats } = selectedFlight;
 
     // Display flight details
@@ -32,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Generate dynamic passenger fields
     function createPassengerFields(numPassengers) {
-        passengerDetailsDiv.innerHTML = ""; // Clear existing fields
+        passengerDetailsDiv.innerHTML = "";
         for (let i = 1; i <= numPassengers; i++) {
             const fieldset = document.createElement("fieldset");
             fieldset.innerHTML = `
@@ -46,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Listen for passenger number input
     numPassengersInput.addEventListener("change", () => {
         const numPassengers = parseInt(numPassengersInput.value, 10);
         if (numPassengers > seats) {
@@ -58,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Save booking on form submission
     document.getElementById("passengerForm").addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -68,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Collect passenger data
         const passengers = [];
         const passportIds = new Set(); // For duplicate passport check
         for (let i = 1; i <= numPassengers; i++) {
@@ -99,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
             passengers.push({ name, passportId });
         }
 
-        // Save booking (example: log to console or send to backend)
         const booking = {
             flightNo,
             origin,
@@ -112,13 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Booking saved:", booking);
         alert(`Booking saved successfully!\n\nBooking Details:\n${JSON.stringify(booking, null, 2)}`);
         window.location.href = "bookings.html";
-/*
-        console.log("Booking saved:", booking);
-        alert("Booking saved successfully!");
-        window.location.href = "bookings.html";*/
+
+       
     });
 
-    // Preload fields for the first flight in the list if none is selected
     if (!flightNo && flights.length > 0) {
         const firstFlight = flights[0];
         window.location.href = `book-flight-details.html?flightNo=${encodeURIComponent(firstFlight.flightNo)}`;

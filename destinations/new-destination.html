@@ -14,33 +14,28 @@
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.getElementById("addDestinationForm");
 
-            // Debug: Check the loaded destinations
-            console.log("Loaded destinations:", destinations);
 
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
 
-                // Get form values
                 const destinationCode = document.getElementById("destinationCode").value.trim().toUpperCase();
                 const destinationName = document.getElementById("destinationName").value.trim();
                 const airportName = document.getElementById("airportName").value.trim();
                 const airportUrl = document.getElementById("airportUrl").value.trim();
                 const imageUrl = document.getElementById("imageUrl").value.trim();
 
-                // Validation: Check if all fields are filled
+               
                 if (!destinationCode || !destinationName || !airportName || !airportUrl || !imageUrl) {
                     alert("All fields must be filled!");
                     return;
                 }
 
-                // Validation: Check if destination code already exists
                 const isDuplicate = destinations.some(dest => dest.code === destinationCode);
                 if (isDuplicate) {
                     alert(`Destination code "${destinationCode}" already exists!`);
                     return;
                 }
 
-                // Create a new destination object
                 const newDestination = {
                     code: destinationCode,
                     name: destinationName,
@@ -49,19 +44,12 @@
                     imageUrl
                 };
 
-                // Debug: Log the new destination object
-                console.log("New Destination:", newDestination);
-
-                // Add the new destination to the `destinations` array
                 destinations.push(newDestination);
 
-                // Debug: Log the updated destinations array
                 console.log("Updated Destinations:", destinations);
 
-                // Success message
                 alert(`Destination added successfully!\n\nDestination Details:\n${JSON.stringify(newDestination, null, 2)}`);
 
-                // Redirect to the destinations list page
                 window.location.href = "destinations.html";
             });
         });
